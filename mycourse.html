@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: #1b2a4e;
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .sidebar ul li a .icon {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background-color: #2c3a61;
+            border-left: 4px solid #d4af37;
+        }
+
+        .profile-content {
+            flex: 1;
+            padding: 40px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .add-course-btn {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-course-btn:hover {
+            background-color: #005bb5;
+        }
+
+        .course-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            text-align: left;
+            padding-bottom: 10px;
+            font-weight: normal;
+            font-size: 14px;
+            color: #666;
+        }
+
+        tbody tr {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .course-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .course-info img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .course-details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .course-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            background-color: #0073e6;
+            color: #fff;
+        }
+
+        td {
+            padding: 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions span {
+            cursor: pointer;
+            font-size: 18px;
+            color: #0073e6;
+            transition: color 0.3s ease;
+        }
+
+        .actions span:hover {
+            color: #005bb5;
+        }
+
+        /* Dialog Box Styles */
+        .dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            position: relative;
+            text-align: center;
+        }
+
+        .dialog-box h2 {
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .dialog-box p {
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .dialog-box .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .dialog-box .dialog-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .dialog-box .dialog-actions button {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dialog-box .dialog-actions button:hover {
+            background-color: #005bb5;
+        }
+
+        .dialog-box .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .dialog-box .cancel-btn:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="myprofil.html" class="active"><i class="icon">👤</i> My Profile</a></li>
+                <li><a href="mycourse.html"><i class="icon">📚</i> My Courses</a></li>
+                <li><a href="addcourse.html"><i class="icon">➕</i> Add Course</a></li>
+                <li><a href="#" id="logoutBtn"><i class="icon">🚪</i> Logout</a></li>
+            </ul>
+        </aside>
+        
+        <main class="profile-content">
+            <div class="header">
+                <h1>My Courses</h1>
+                <button class="add-course-btn">Add Course +</button>
+            </div>
+            <div class="course-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>COURSES</th>
+                            <th>DURATION</th>
+                            <th>PRICE</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="course-info">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPPqmpE5TW_Ks80SvlDQzbL_BC2kr21WPPWA&s" alt="Course Image">
+                                    <div class="course-details">
+                                        <h2>mern</h2>
+                                        <p>this is about mern stack</p>
+                                        <p>Created: July 27, 2024 | 1:14 PM</p>
+                                        <span class="status">Published</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>2hr 30min</td>
+                            <td>₹500</td>
+                            <td>
+                                <div class="actions">
+                                    <span class="edit">&#9998;</span>
+                                    <span class="delete">&#128465;</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Logout Dialog Box -->
+    <div class="dialog-overlay" id="dialogOverlay">
+        <div class="dialog-box">
+            <span class="close-btn" id="closeDialogBtn">&times;</span>
+            <h2>Logout</h2>
+            <p>Are you sure you want to logout?</p>
+            <div class="dialog-actions">
+                <button id="confirmLogoutBtn">Logout</button>
+                <button class="cancel-btn" id="cancelLogoutBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            document.getElementById('dialogOverlay').style.display = 'flex';
+        });
+
+        document.getElementById('closeDialogBtn').addEventListener('click', function() {
+            document.getElementById('dialogOverlay').style.display = 'none';
+        });
+
+        document.getElementById('cancelLogoutBtn').addEventListener('click', function() {
+            document.getElementById('dialogOverlay').style.display = 'none';
+        });
+
+        document.getElementById('confirmLogoutBtn').addEventListener('click', function() {
+            // Add your logout logic here
+            alert('You have logged out.');
+            document.getElementById('dialogOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

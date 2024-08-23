@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My courses</title>
+    <link rel="stylesheet" href="courses.css">
+    <style>
+        .container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side {
+    width: 25%; /* Increase the width of the sidebar */
+    background-color: #1E90FF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-name {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.option {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-logo {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.option:hover {
+    background-color: #104E8B;
+    transform: translateY(-3px);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* topics   */
+.topic-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.topic-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.labels {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.label {
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.label.sl {
+    background-color: #32CD32; /* Light green color */
+}
+
+.label.hl {
+    background-color: #00CED1; /* Turquoise color */
+}
+
+.label.topic-number {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.topic-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.topic-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.flashcards-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.flashcards-info img {
+    width: 24px;
+    height: 24px;
+}
+
+.study-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 3px;
+}
+
+.progress {
+    background-color: #3082E9;
+    width: 42%;
+    height: 100%;
+}
+
+.subtopics-content {
+    margin-bottom: 15px;
+}
+
+.subtopic {
+    display: none; /* Hidden by default */
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 18px;
+    color: #3082E9;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #3082E9;
+}
+
+.view-subtopics {
+    display: flex;
+    justify-content: center;
+}
+
+.view-subtopics button {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #3082E9;
+}
+
+.view-subtopics button:hover {
+    background-color: #3082E9;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.subtopics-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.subtopic-card {
+    min-width: 100px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.subtopic-card:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+
+.right-side {
+    width: 70%;
+    padding: 20px;
+}
+
+.content-section {
+    display: none; /* Hide all sections by default */
+}
+
+.flashcard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--------------------left side bar code -------------------------->
+        <div class="left-side">
+            <div class="subject-name">Chemistry</div>
+            <div class="options">
+                <button id="flashcards-btn" class="option">
+                    <img src="play.png" alt="Flashcards Logo" class="option-logo">
+                    Flashcards
+                </button>
+                <button id="guide-btn" class="option">
+                    <img src="flash-cards.png" alt="Guide Logo" class="option-logo">
+                    Guide
+                </button>
+                <button id="videos-btn" class="option">
+                    <img src="play.png" alt="Videos Logo" class="option-logo">
+                    Videos
+                </button>
+                <button id="exams-btn" class="option">
+                    <img src="flash-cards.png" alt="Exams Logo" class="option-logo">
+                    Exams
+                </button>
+            </div>
+
+            <!-----------------------------------Topics code -------------------------------->
+            <div class="topics">
+                
+                <!---------------------------------topics card 1---------------------------------------->
+                <div class="topic-container">
+                    <div class="topic-header">
+                        <div class="labels">
+                            
+                            <span class="label topic-number">TOPIC 1</span>
+                        </div>
+                        <h3 class="topic-title">Atomic Structure</h3>
+                    </div>
+                    <div class="topic-info">
+                        <div class="flashcards-info">
+                            <img src="flash-cards.png" alt="Flashcards">
+                            <span>21 Flashcards</span>
+                            <small>42-62</small>
+                        </div>
+                        <div class="study-info">
+                            <span>0 Studied</span>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Subtopics Content -->
+                    <div class="subtopics-content">
+                        <div class="subtopic" id="subtopic1">Subtopic 1 Content</div>
+                        <div class="subtopic" id="subtopic2">Subtopic 2 Content</div>
+                        <div class="subtopic" id="subtopic3">Subtopic 3 Content</div>
+                    </div>
+                
+                    <!-- Navigation Dots and Arrows -->
+                    <div class="carousel-navigation">
+                        <span class="arrow" id="prevArrow">&#9664;</span>
+                        <div class="carousel-dots">
+                            <span class="dot" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <span class="arrow" id="nextArrow">&#9654;</span>
+                    </div>
+                
+                    <!-- <div class="view-subtopics">
+                        <button>VIEW 3 SUBTOPICS</button>
+                    </div> -->
+                </div>
+                
+                
+                <br>
+
+                <!---------------------topics card 2------------------->
+                <div class="topic-container">
+                    <div class="topic-header">
+                        <div class="labels">
+                            
+                            <span class="label topic-number">TOPIC 2</span>
+                        </div>
+                        <h3 class="topic-title">Atomic Structure</h3>
+                    </div>
+                    <div class="topic-info">
+                        <div class="flashcards-info">
+                            <img src="flash-cards.png" alt="Flashcards">
+                            <span>21 Flashcards</span>
+                            <small>42-62</small>
+                        </div>
+                        <div class="study-info">
+                            <span>0 Studied</span>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Subtopics Content -->
+                    <div class="subtopics-content">
+                        <div class="subtopic" id="subtopic1">Subtopic 1 Content</div>
+                        <div class="subtopic" id="subtopic2">Subtopic 2 Content</div>
+                        <div class="subtopic" id="subtopic3">Subtopic 3 Content</div>
+                    </div>
+                
+                    <!-- Navigation Dots and Arrows -->
+                    <div class="carousel-navigation">
+                        <span class="arrow" id="prevArrow">&#9664;</span>
+                        <div class="carousel-dots">
+                            <span class="dot" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <span class="arrow" id="nextArrow">&#9654;</span>
+                    </div>
+                
+                    <!-- <div class="view-subtopics">
+                        <button>VIEW 3 SUBTOPICS</button>
+                    </div> -->
+                </div>
+                
+                <br>
+
+        <!-----------------------topic card 3---------------------------->
+        <div class="topic-container">
+            <div class="topic-header">
+                <div class="labels">
+                    
+                    <span class="label topic-number">TOPIC 3</span>
+                </div>
+                <h3 class="topic-title">Atomic Structure</h3>
+            </div>
+            <div class="topic-info">
+                <div class="flashcards-info">
+                    <img src="flash-cards.png" alt="Flashcards">
+                    <span>21 Flashcards</span>
+                    <small>42-62</small>
+                </div>
+                <div class="study-info">
+                    <span>0 Studied</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Subtopics Content -->
+            <div class="subtopics-content">
+                <div class="subtopic" id="subtopic1">Subtopic 1 Content</div>
+                <div class="subtopic" id="subtopic2">Subtopic 2 Content</div>
+                <div class="subtopic" id="subtopic3">Subtopic 3 Content</div>
+            </div>
+        
+            <!-- Navigation Dots and Arrows -->
+            <div class="carousel-navigation">
+                <span class="arrow" id="prevArrow">&#9664;</span>
+                <div class="carousel-dots">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <span class="arrow" id="nextArrow">&#9654;</span>
+            </div>
+        
+            <!-- <div class="view-subtopics">
+                <button>VIEW 3 SUBTOPICS</button>
+            </div> -->
+        </div>
+        
+        <br>
+
+        <!-----------------------topic card 4---------------------------->
+        <div class="topic-container">
+            <div class="topic-header">
+                <div class="labels">
+                 
+                    <span class="label topic-number">TOPIC 2</span>
+                </div>
+                <h3 class="topic-title">Atomic Structure</h3>
+            </div>
+            <div class="topic-info">
+                <div class="flashcards-info">
+                    <img src="images\flash-cards.png" alt="Flashcards">
+                    <span>21 Flashcards</span>
+                </div>
+                <div class="study-info">
+                    <span>0 Studied</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subtopics-carousel">
+                <div class="subtopic-card">Subtopic 1</div>
+                <div class="subtopic-card">Subtopic 2</div>
+                <div class="subtopic-card">Subtopic 3</div>
+                <!-- More subtopic cards -->
+            </div>
+            
+        </div>
+        <br>
+
+
+    </div>
+       
+        <!--------------------right side bar code -------------------------->
+
+        <div class="right-side">
+            <div id="flashcards" class="content-section">
+                <!-- Flashcards will appear here -->
+                <div class="flashcard">Flashcard content goes here</div>
+            </div>
+            <div id="guide" class="content-section">
+                <!-- Guide content -->
+            </div>
+            <div id="videos" class="content-section">
+                <!-- Videos content -->
+            </div>
+            <div id="exams" class="content-section">
+                <!-- Exams content -->
+            </div>
+        </div>
+    </div>
+    <script>
+
+        document.getElementById('flashcards-btn').addEventListener('click', function() {
+    showSection('flashcards');
+});
+
+document.getElementById('guide-btn').addEventListener('click', function() {
+    showSection('guide');
+});
+
+document.getElementById('videos-btn').addEventListener('click', function() {
+    showSection('videos');
+});
+
+document.getElementById('exams-btn').addEventListener('click', function() {
+    showSection('exams');
+});
+
+document.querySelectorAll('.topic-card').forEach(card => {
+    card.addEventListener('click', function() {
+        showSection('flashcards'); // Show flashcards section when a topic is clicked
+       
+    });
+});
+
+function showSection(sectionId) {
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+
+// cards
+document.addEventListener("DOMContentLoaded", function() {
+    const subtopics = document.querySelectorAll('.subtopic');
+    const dots = document.querySelectorAll('.dot');
+    const prevArrow = document.getElementById('prevArrow');
+    const nextArrow = document.getElementById('nextArrow');
+    let currentIndex = 0;
+
+    function updateSubtopic(index) {
+        subtopics.forEach((subtopic, i) => {
+            subtopic.style.display = (i === index) ? 'block' : 'none';
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            currentIndex = parseInt(dot.getAttribute('data-index'));
+            updateSubtopic(currentIndex);
+        });
+    });
+
+    prevArrow.addEventListener('click', function() {
+        currentIndex = (currentIndex === 0) ? subtopics.length - 1 : currentIndex - 1;
+        updateSubtopic(currentIndex);
+    });
+
+    nextArrow.addEventListener('click', function() {
+        currentIndex = (currentIndex === subtopics.length - 1) ? 0 : currentIndex + 1;
+        updateSubtopic(currentIndex);
+    });
+
+    // Initialize first subtopic
+    updateSubtopic(currentIndex);
+});
+
+
+
+
+// cards backend 
+// Function to create a new card element
+function createNewCard(topicData) {
+    // Create the main container for the topic
+    const topicContainer = document.createElement('div');
+    topicContainer.classList.add('topic-container');
+
+    // Create the topic header
+    const topicHeader = document.createElement('div');
+    topicHeader.classList.add('topic-header');
+    topicContainer.appendChild(topicHeader);
+
+    // Create the labels container
+    const labels = document.createElement('div');
+    labels.classList.add('labels');
+    topicHeader.appendChild(labels);
+
+    // Add SL and HL labels if available
+    if (topicData.sl) {
+        const slLabel = document.createElement('span');
+        slLabel.classList.add('label', 'topic-level', 'sl');
+        slLabel.innerText = 'SL';
+        labels.appendChild(slLabel);
+    }
+    
+    if (topicData.hl) {
+        const hlLabel = document.createElement('span');
+        hlLabel.classList.add('label', 'topic-level', 'hl');
+        hlLabel.innerText = 'HL';
+        labels.appendChild(hlLabel);
+    }
+
+    // Add the topic number label
+    const topicNumberLabel = document.createElement('span');
+    topicNumberLabel.classList.add('label', 'topic-number');
+    topicNumberLabel.innerText = topicData.topicNumber;
+    labels.appendChild(topicNumberLabel);
+
+    // Add the topic title
+    const topicTitle = document.createElement('h3');
+    topicTitle.classList.add('topic-title');
+    topicTitle.innerText = topicData.topicTitle;
+    topicHeader.appendChild(topicTitle);
+
+    // Create the topic info section
+    const topicInfo = document.createElement('div');
+    topicInfo.classList.add('topic-info');
+    topicContainer.appendChild(topicInfo);
+
+    // Create the flashcards info
+    const flashcardsInfo = document.createElement('div');
+    flashcardsInfo.classList.add('flashcards-info');
+    topicInfo.appendChild(flashcardsInfo);
+
+    const flashcardsImage = document.createElement('img');
+    flashcardsImage.src = topicData.flashcardsImage;
+    flashcardsImage.alt = 'Flashcards';
+    flashcardsInfo.appendChild(flashcardsImage);
+
+    const flashcardsText = document.createElement('span');
+    flashcardsText.innerText = `${topicData.flashcards} Flashcards`;
+    flashcardsInfo.appendChild(flashcardsText);
+
+    // Add a small element for the flashcard range
+    const flashcardsRange = document.createElement('small');
+    flashcardsRange.innerText = topicData.flashcardsRange;
+    flashcardsInfo.appendChild(flashcardsRange);
+
+    // Create the study info section
+    const studyInfo = document.createElement('div');
+    studyInfo.classList.add('study-info');
+    topicInfo.appendChild(studyInfo);
+
+    const studiedText = document.createElement('span');
+    studiedText.innerText = `${topicData.studied} Studied`;
+    studyInfo.appendChild(studiedText);
+
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    studyInfo.appendChild(progressBar);
+
+    const progress = document.createElement('div');
+    progress.classList.add('progress');
+    progress.style.width = topicData.progress; // Progress percentage
+    progressBar.appendChild(progress);
+
+    // Create the subtopics content section
+    const subtopicsContent = document.createElement('div');
+    subtopicsContent.classList.add('subtopics-content');
+    topicContainer.appendChild(subtopicsContent);
+
+    topicData.subtopics.forEach((subtopic, index) => {
+        const subtopicDiv = document.createElement('div');
+        subtopicDiv.classList.add('subtopic');
+        subtopicDiv.id = `subtopic${index + 1}`;
+        subtopicDiv.innerText = subtopic;
+        subtopicsContent.appendChild(subtopicDiv);
+    });
+
+    // Create the navigation dots and arrows section
+    const carouselNavigation = document.createElement('div');
+    carouselNavigation.classList.add('carousel-navigation');
+    topicContainer.appendChild(carouselNavigation);
+
+    const prevArrow = document.createElement('span');
+    prevArrow.classList.add('arrow');
+    prevArrow.innerHTML = '&#9664;';
+    prevArrow.id = 'prevArrow';
+    carouselNavigation.appendChild(prevArrow);
+
+    const carouselDots = document.createElement('div');
+    carouselDots.classList.add('carousel-dots');
+    carouselNavigation.appendChild(carouselDots);
+
+    topicData.subtopics.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.dataset.index = index;
+        carouselDots.appendChild(dot);
+    });
+
+    const nextArrow = document.createElement('span');
+    nextArrow.classList.add('arrow');
+    nextArrow.innerHTML = '&#9654;';
+    nextArrow.id = 'nextArrow';
+    carouselNavigation.appendChild(nextArrow);
+
+    // Create the view subtopics button
+    const viewSubtopics = document.createElement('div');
+    viewSubtopics.classList.add('view-subtopics');
+    topicContainer.appendChild(viewSubtopics);
+
+    const viewSubtopicsButton = document.createElement('button');
+    viewSubtopicsButton.innerText = `VIEW ${topicData.subtopics.length} SUBTOPICS`;
+    viewSubtopics.appendChild(viewSubtopicsButton);
+
+    // Append the new card to the parent container
+    const parentContainer = document.querySelector('#parent-container'); // Make sure this matches your HTML structure
+    parentContainer.appendChild(topicContainer);
+
+    // Reinitialize the JavaScript for navigation dots
+    initializeCarousel(topicContainer);
+}
+
+// Example data received from backend
+const newTopicData = {
+    sl: true,
+    hl: true,
+    topicNumber: 'TOPIC 3',
+    topicTitle: 'New Topic',
+    flashcardsImage: 'images/flash-cards.png',
+    flashcards: 30,
+    flashcardsRange: '63-92',
+    studied: 0,
+    progress: '0%',
+    subtopics: ['Subtopic 1', 'Subtopic 2', 'Subtopic 3']
+};
+
+// Simulate adding a new card when new data is received
+document.getElementById('addNewCardButton').addEventListener('click', function() {
+    createNewCard(newTopicData);
+});
+
+// Function to initialize the carousel behavior for a given container
+function initializeCarousel(container) {
+    const subtopics = container.querySelectorAll('.subtopic');
+    const dots = container.querySelectorAll('.dot');
+    const prevArrow = container.querySelector('#prevArrow');
+    const nextArrow = container.querySelector('#nextArrow');
+    let currentIndex = 0;
+
+    function updateSubtopic(index) {
+        subtopics.forEach((subtopic, i) => {
+            subtopic.style.display = (i === index) ? 'block' : 'none';
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            currentIndex = parseInt(dot.getAttribute('data-index'));
+            updateSubtopic(currentIndex);
+        });
+    });
+
+    prevArrow.addEventListener('click', function() {
+        currentIndex = (currentIndex === 0) ? subtopics.length - 1 : currentIndex - 1;
+        updateSubtopic(currentIndex);
+    });
+
+    nextArrow.addEventListener('click', function() {
+        currentIndex = (currentIndex === subtopics.length - 1) ? 0 : currentIndex + 1;
+        updateSubtopic(currentIndex);
+    });
+
+    // Initialize first subtopic
+    updateSubtopic(currentIndex);
+}
+
+// Initialize the first card if there's any existing
+initializeCarousel(document.querySelector('.topic-container'));
+
+</script>
+</body>
+</html>

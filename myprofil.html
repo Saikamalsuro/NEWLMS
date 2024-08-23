@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #1e1e2d;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: #f1f1f1;
+            padding: 20px 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #EC2127;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .sidebar ul li a .icon {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background-color: #e6e6e6;
+            border-left: 4px solid #EC2127;
+        }
+
+        .profile-content {
+            flex: 1;
+            padding: 40px;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1e1e2d;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-card .profile-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-card .avatar {
+            background-color: #0073e6;
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            margin-right: 20px;
+        }
+
+        .about-card, .personal-details-card {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .personal-details-card .details {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .personal-details-card .details div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+            background-color: #e6e6e6;
+            color: #1e1e2d;
+        }
+
+        button.edit-btn {
+            background-color: #0073e6;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        button.edit-btn i.icon {
+            margin-left: 10px;
+        }
+
+        button.edit-btn:hover {
+            background-color: #b31a1f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="myprofil.html" class="active"><i class="icon">👤</i> My Profile</a></li>
+                <li><a href="mycourse.html"><i class="icon">📚</i> My Courses</a></li>
+                <li><a href="addcourse.html"><i class="icon">➕</i> Add Course</a></li>
+                <li><a href="#"><i class="icon">🚪</i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="profile-content">
+            <h1>My Profile</h1>
+            <section class="card profile-card">
+                <div class="profile-info">
+                    <!-- <div class="avatar">RK</div> -->
+                    <div>
+                        <h2>Raghavan Krishna</h2>
+                        <p>mavkrishnaraghavan@gmail.com</p>
+                    </div>
+                </div>
+                <button class="edit-btn">Edit <i class="icon">✏️</i></button>
+            </section>
+            <section class="card about-card">
+                <h2>About</h2>
+                <p>Write Something About Yourself</p>
+                <button class="edit-btn">Edit <i class="icon">✏️</i></button>
+            </section>
+            <section class="card personal-details-card">
+                <h2>Personal Details</h2>
+                <div class="details">
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="text" placeholder="Email">
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <input type="text" placeholder="Phone">
+                    </div>
+                    <div>
+                        <label>Gender</label>
+                        <input type="text" placeholder="Gender">
+                    </div>
+                    <div>
+                        <label>DOB</label>
+                        <input type="text" placeholder="DOB">
+                    </div>  
+                </div>
+                <button class="edit-btn" >Edit <i class="icon">✏️</i></button>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Edit button clicked!');
+            });
+        });
+    </script>
+</body>
+</html>

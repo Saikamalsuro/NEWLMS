@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: rgb(193, 193, 193);
+            padding: 20px 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #ec2b2b;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .sidebar ul li a .icon {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background-color: #d1d1d1;
+            border-left: 4px solid #d4af37;
+        }
+
+        .profile-content {
+            flex: 1;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #f01818;
+        }
+
+        .steps {
+            display: flex;
+            gap: 10px;
+        }
+
+        .step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #333;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .step.active {
+            background-color: #dab324;
+        }
+
+        .course-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .course-form .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #f01818;
+        }
+
+        .course-form .form-group input,
+        .course-form .form-group textarea {
+            width: 30%;
+            padding: 10px;
+            background-color: #d8d7d7;
+            border: none;
+            color: #000000;
+            border-radius: 5px;
+        }
+
+        .upload-tips {
+            width: 300px;
+            padding: 30px;
+            background-color: #1e1e1e;
+            box-sizing: border-box;
+        }
+
+        .upload-tips h2 {
+            margin-top: 0;
+            color: #dab324;
+        }
+
+        .upload-tips ul {
+            padding-left: 20px;
+        }
+
+        .upload-tips ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="myprofil.html" class="active"><i class="icon">👤</i> My Profile</a></li>
+                <li><a href="mycourse.html"><i class="icon">📚</i> My Courses</a></li>
+                <li><a href="addcourse.html"><i class="icon">➕</i> Add Course</a></li>
+                <li><a href="#"><i class="icon">🚪</i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="profile-content">
+            <h1>Add Course</h1>
+            <form class="course-form">
+                <div class="form-group">
+                    <label for="courseTitle">Course Title *</label>
+                    <input type="text" id="courseTitle" placeholder="Enter Course Title">
+                </div>
+                <div class="form-group">
+                    <label for="courseDescription">Course Short Description *</label>
+                    <textarea id="courseDescription" placeholder="Enter Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="courseCategory">Course Category *</label>
+                    <select id="courseCategory">
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="MATHS">MATHS</option>
+                        <option value="PHYSICS">PHYSICS</option>
+                        <option value="CHEMISTRY">CHEMISTRY</option>
+                        <option value="BIOLOGY">BIOLOGY</option>
+                        <option value="ENGLISH">ENGLISH</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="courseTags">Tags *</label>
+                    <input type="text" id="courseTags" placeholder="Enter Tags and press Enter">
+                </div>
+                <div class="form-group">
+                    <label for="courseRequirements">Requirements/Instructions *</label>
+                    <textarea id="courseRequirements"></textarea>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

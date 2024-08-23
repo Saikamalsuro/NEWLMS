@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSC Study</title>
+    <style>
+    .container1234 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-container1234 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.illustration {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-container1234 {
+    flex: 1;
+    padding-left: 30px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #1a1a1a;
+}
+
+.highlight {
+    color: #e94560;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.note {
+    font-weight: bold;
+    color: #888;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #EC2127;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 35px;
+}
+
+.btn:hover {
+    background-color: #EC2127;
+}
+
+
+
+
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    font-size: 18px; /* Adjust as needed */
+    font-weight: 500;
+    color: #5A6472; /* Dark grey color for text */
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    width: 30px; /* Length of the underline */
+    height: 2px;  /* Thickness of the underline */
+    background-color: #EC2127; /* Color of the underline */
+    bottom: 0;
+    left: -35px; /* Adjust this to move the underline to the left */
+    top: 50%;
+    transform: translateY(-50%); /* Align underline vertically with text */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            font-family: 'Roboto', sans-serif;  
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .heading {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #EC2127;
+        }
+        .description {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 2rem;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .icon {
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 20px;
+        }
+        .icon img {
+            width: 100px;
+            height: 100px;
+        }
+        .icon-title {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+       
+
+
+
+
+
+
+
+
+
+
+/* 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+} */
+
+.container2 {
+    display: flex;
+    flex-direction: column; /* Default to column layout for small screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 
+.text-content2 {
+    padding-right: 20px;
+    flex: 1;
+} */
+
+.image-content2 {
+    width: 100%; /* Make image content take full width */
+    height: auto;
+    margin-top: 20px; /* Add space between text and image */
+}
+
+h1 {
+    color: #4a90e2;
+    font-size: 2.5em;
+}
+
+.app-preview2 {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 320px) and (max-width: 375px) {
+    .container2 {
+        flex-direction: column; /* Stack elements vertically on small screens */
+    }
+    .text-content2 {
+        padding-right: 0; /* Remove padding on small screens */
+    }
+    .image-content2 {
+        width: 100%; /* Ensure image is full width */
+        margin-top: 20px;
+    }
+    h1 {
+        font-size: 2em; /* Adjust font size for small screens */
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .container2 {
+        flex-direction: column; /* Stack elements vertically on medium screens */
+    }
+    .text-content2 {
+        padding-right: 0; /* Remove padding on medium screens */
+    }
+    .image-content2 {
+        width: 100%; /* Ensure image is full width */
+        margin-top: 20px;
+    }
+    h1 {
+        font-size: 2.25em; /* Adjust font size for medium screens */
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .container2 {
+        flex-direction: column; /* Stack elements vertically on larger screens but still small */
+    }
+    .text-content2 {
+        padding-right: 0; /* Remove padding */
+    }
+    .image-content2 {
+        width: 100%; /* Ensure image is full width */
+        margin-top: 20px;
+    }
+    h1 {
+        font-size: 2.5em; /* Adjust font size for larger small screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .container2 {
+        flex-direction: row; /* Use row layout for larger screens */
+    }
+    .text-content2 {
+        flex: 1;
+        padding-right: 20px;
+    }
+    .image-content2 {
+        width: 400px;
+        height: auto;
+        margin-top: 0; /* Remove margin on larger screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+        body {
+            font-family: 'Roboto', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+} */
+.container3 {
+    width: 80%;
+    max-width: 1200px; /* Restrict the maximum width for larger screens */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.header3 h1 {
+    font-family: 'Roboto', sans-serif; /* Ensure consistent font */
+    font-size: 2.5em;
+    color: #0288d1; /* Bright, professional color */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.header3 p {
+    font-family: 'Roboto', sans-serif; /* Consistent font for all text */
+    color: #4a4a4a; /* Subtle gray color */
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.header-subtitle {
+    font-weight: bold; /* Make subtitle stand out */
+}
+
+.header-call-to-action {
+    color: #0288d1; /* Match the header color */
+    font-weight: bold; /* Emphasize the call to action */
+}
+
+@media (max-width: 768px) {
+    .header3 h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    .header3 p {
+        font-size: 1em; /* Adjust font size for readability */
+    }
+}
+
+.subjects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.subject-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Default width for small screens */
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.subject-card img {
+    width: 80px; /* Smaller default size for images on small screens */
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+.subject-card h2 {
+    font-size: 1.2em; /* Smaller default font size */
+    color: #333;
+}
+
+/* Medium screens (768px) */
+@media screen and (min-width: 768px) {
+    .subject-card {
+        width: 22%; /* Adjust width for larger screens */
+    }
+
+    .subject-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .subject-card h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Small screens (425px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .subject-card {
+        width: 30%; /* Adjust width for tablets */
+    }
+
+    .subject-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .subject-card h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Very small screens (375px) */
+@media screen and (min-width: 375px) and (max-width: 424px) {
+    .subject-card {
+        width: 40%; /* Adjust width for smaller screens */
+    }
+
+    .subject-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .subject-card h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Extra small screens (320px) */
+@media screen and (max-width: 374px) {
+    .subject-card {
+        width: 100%; /* Full width on the smallest screens */
+    }
+
+    .subject-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .subject-card h2 {
+        font-size: 1.1em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0277bd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+.icon-title {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    padding: 3px 6px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+
+    border: 1px solid #000; /* Sets the border color and thickness */
+    border-radius: 30px; /* Adjusts the curvature of the border */
+    font-size: 12px; 
+}
+
+.icon:hover .icon-title {
+    background-color: #e0e0e0;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.tile-container {
+    display: flex;
+    justify-content: center; /* Center the tiles horizontally */
+    align-items: center; /* Center the tiles vertically (if container has height) */
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.tile {
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tile-img {
+    width: 70px;
+    height: 70px;
+    padding-top: 15px;
+}
+
+.tile-content {
+    padding: 15px;
+}
+
+.tile-title {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+    background-color: blue;
+    border-radius: 40px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.4s;
+}
+
+.tile-title:hover {
+    background-color: rgb(237, 32, 32)   ;
+}
+.tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tile:hover .tile-img {
+    opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Initial state (hidden) */
+.heading, .description, .tile {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Show state (visible) */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* Initial state (hidden) */
+.text-content2, .image-content2, h1, h2, p {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Show state (visible) */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container1234">
+        <div class="image-container1234">
+            <img src="https://urstudymate.com/img/learning_img.png" alt="Learning Illustration" class="illustration">
+        </div>
+        <div class="content-container1234">
+            <div class="section-title">
+                <span>ABOUT US</span>
+            </div>
+            
+            <h2>Learning with <span class="highlight">Urstudymate</span></h2>
+            <p>
+                urstudymate is an exam preparation tool containing a bank of IGCSE past papers exam questions (Cambridge, Edexcel).
+                A level past papers exam questions (Cambridge, Edexcel), past IB questions and mark schemes for a range of IGCSE,
+                A level and IB diploma subjects.
+            </p>
+            <p class="note">
+                With Previous & Topical Past Papers
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    <div class="container">
+        <div class="heading" style=" font-family: 'Roboto', sans-serif;">Special Features</div>
+        <div class="description" style=" font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 20px;">
+           OSC Study blends the most effective media in one place Providing you with every opportunity to learn in a way that best suits you. Providing different approaches to topics contributes to better learning; see flashcards for bite-sizing, videos for anchoring key concepts, revision guides for comprehensive subject overviews, and OSC exams to tie your knowledge together. Accessible from any device, you can make an efficient start anytime, anywhere.
+        </div>
+
+        <div class="tile-container">
+            <div class="tile">
+                <img src="flash-cards.png" class="tile-img" alt="Flashcards">
+                <div class="tile-content">
+                    <h5 class="tile-title">Flashcards</h5>
+                </div>
+            </div>
+            <div class="tile">
+                <img src="revision.png" class="tile-img" alt="Revision Guides">
+                <div class="tile-content">
+                    <h5 class="tile-title">Guides</h5>
+                </div>
+            </div>
+            <div class="tile">
+                <img src="play.png" class="tile-img" alt="Videos">
+                <div class="tile-content">
+                    <h5 class="tile-title">Videos</h5>
+                </div>
+            </div>
+            <div class="tile">
+                <img src="score.png" class="tile-img" alt="Exams">
+                <div class="tile-content">
+                    <h5 class="tile-title">Exams</h5>
+                </div>
+            </div>  
+        </div>
+    </div>
+<br>
+            <div class="container2">
+            <div class="text-content2">
+                <h1 style="  font-family: 'Roboto', sans-serif;  ">Smart Digital Content</h1>
+                <h2 style="  font-family: 'Roboto', sans-serif;  ">Designed to keep you on track.</h2>
+                <p style="font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 2rem;" >
+                    OSC Study follows the syllabus to a tee. The web app maps out each topic individually with all available media, making it easy for you to jump between flashcards, revision guides, videos and exams. As you browse all of the content, OSC Study crunches your study data in the background to keep you on track.
+                </p>
+                
+            </div>
+            <div class="image-content2">
+                <img src="https://png.pngtree.com/png-vector/20220225/ourlarge/pngtree-illustration-of-flat-cartoon-depicting-target-marketing-digital-content-marketing-and-customer-targeting-concepts-vector-png-image_44510108.jpg" alt="App Preview" class="app-preview2">
+            </div> 
+            </div>
+
+
+
+
+        <div class="container3">
+            <header class="header3">
+                <h1 style="  font-family: 'Roboto', sans-serif;  ">The Subjects</h1>
+                <p><b>Broad DP coverage. Expanded continuously. All included.</b></p>
+                <p>OSC Study revision materials are produced by educators from leading IB world schools. Collectively, their experience ranges from subject and group coordination, to participating in curriculum reviews and authoring for the main publishing houses. Most of them are also experienced IB examiners, so they can show you what you need to know in order to achieve the best results on your exams.</p>
+                <p>Start your free 7-day trial now without any obligation to purchase.</p>
+            </header>   
+            
+            <div class="subjects">
+                <div class="subject-card">
+                    <img src="ides.png" alt="Mathematics A&A">
+                    <h2>Mathematics A&A</h2>
+                   
+                </div>
+    
+                <div class="subject-card">
+                    <img src="NFFAf/9k=" alt="Mathematics A&I">
+                    <h2>Mathematics A&I</h2>
+                  
+                </div>
+    
+                <div class="subject-card">
+                    <img src="NFFAf/9k=" alt="Biology">
+                    <h2>Biology</h2>
+                  
+                </div>
+    
+                <div class="subject-card">
+                    <img src="Af/9k=" alt="Chemistry">
+                    <h2>Chemistry</h2>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.heading, .description, .tile');
+
+    function animateOnScroll() {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < triggerBottom) {
+                element.classList.add('show');
+            } else {
+                element.classList.remove('show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Initial check
+    animateOnScroll();
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.text-content2, .image-content2, h1, h2, p');
+
+    function animateOnScroll() {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < triggerBottom) {
+                element.classList.add('show');
+            } else {
+                element.classList.remove('show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Initial check
+    animateOnScroll();
+});
+
+</script>
+
+</body>
+</html>
